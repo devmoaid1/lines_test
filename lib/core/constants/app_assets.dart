@@ -14,7 +14,7 @@ abstract class AppAssets {
   static const String messageTextIcon = 'assets/icons/message-text.svg';
   static const String repeatIcon = 'assets/icons/repeat.svg';
   static const String shareIcon = 'assets/icons/share.svg';
-  static const String starFilledIcom = 'assets/icons/star_filled.svg';
+  static const String starFilledIcon = 'assets/icons/star_filled.svg';
   static const String tickIcon = 'assets/icons/tick.svg';
   static const String userAddIcon = 'assets/icons/user-add.svg';
   static const String starUnfilled = 'assets/icons/star_filled.svg';
