@@ -17,10 +17,13 @@ class LinesApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          title: AppStrings.appName,
-          theme: lightTheme,
-          home: const ProductDetailsView(),
+        return Directionality(
+          textDirection: TextDirection.rtl,
+          child: MaterialApp(
+            title: AppStrings.appName,
+            theme: lightTheme,
+            home: const ProductDetailsView(),
+          ),
         );
       },
     );
