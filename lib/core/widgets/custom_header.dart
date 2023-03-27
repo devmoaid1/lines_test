@@ -18,16 +18,21 @@ class CustomHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Icon(iconData),
+        Icon(
+          iconData,
+        ),
         const Spacer(),
         Center(
           child: Text(
             title,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
-            style: context.theme.textTheme.headlineMedium!
-                .copyWith(color: AppColors.kHeadingsTextColor),
+            style: context.theme.textTheme.headlineMedium!.copyWith(
+              color: AppColors.kHeadingsTextColor,
+            ),
           ),
         ),
         const Spacer(),

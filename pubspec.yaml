@@ -44,11 +44,11 @@ flutter:
   fonts:
     - family: DIN
       fonts:
-        - asset: assets/font/DINNextLTArabic-Regular.ttf
+        - asset: assets/fonts/DIN_Next_LTArabic/DINNextLTArabic-Regular.ttf
           weight: 400
-        - asset: assets/font/DINNextLTArabic-Black.ttf
+        - asset: assets/fonts/DIN_Next_LTArabic/DINNextLTArabic-Black.ttf
           weight: 500
-        - asset: assets/font/DINNextLTArabic-Medium.ttf
+        - asset: assets/fonts/DIN_Next_LTArabic/DINNextLTArabic-Medium.ttf
           weight: 600
-        - asset: assets/font/DINNextLTArabic-Bold.ttf
+        - asset: assets/fonts/DIN_Next_LTArabic/DINNextLTArabic-Bold.ttf
           weight: 700

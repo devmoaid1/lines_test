@@ -8,7 +8,6 @@ import 'features/product_details/presentation/views/product_details_view.dart';
 class LinesApp extends StatelessWidget {
   const LinesApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -17,13 +16,13 @@ class LinesApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return Directionality(
-          textDirection: TextDirection.rtl,
-          child: MaterialApp(
-            title: AppStrings.appName,
-            theme: lightTheme,
-            home: const ProductDetailsView(),
-          ),
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          builder: (context, child) =>
+              Directionality(textDirection: TextDirection.rtl, child: child!),
+          title: AppStrings.appName,
+          theme: lightTheme,
+          home: const ProductDetailsView(),
         );
       },
     );

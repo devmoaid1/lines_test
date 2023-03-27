@@ -28,7 +28,7 @@ final eleveatedButtonTheme = ElevatedButtonThemeData(
 );
 
 final lightTheme = ThemeData(
-    fontFamily: 'DIA',
+    fontFamily: 'DIN',
     scaffoldBackgroundColor: Colors.white,
     textTheme: textTheme,
     elevatedButtonTheme: eleveatedButtonTheme,
