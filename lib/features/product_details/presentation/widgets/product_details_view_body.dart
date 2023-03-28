@@ -5,6 +5,7 @@ import 'package:lines_test/core/theme/styles.dart';
 import 'package:lines_test/core/widgets/custom_header.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_details_section.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_images_section.dart';
+import 'package:lines_test/features/product_details/presentation/widgets/product_wholesale_prices_section.dart';
 
 class ProductDetailsViewBody extends StatelessWidget {
   const ProductDetailsViewBody({super.key});
@@ -31,6 +32,9 @@ class ProductDetailsViewBody extends StatelessWidget {
             ),
             const SliverToBoxAdapter(
               child: ProductDetailsSection(),
+            ),
+            const SliverToBoxAdapter(
+              child: ProductWholeSalePricesSection(),
             ),
           ],
         ),
