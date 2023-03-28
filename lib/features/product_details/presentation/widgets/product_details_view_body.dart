@@ -7,6 +7,7 @@ import 'package:lines_test/features/product_details/presentation/widgets/product
 import 'package:lines_test/features/product_details/presentation/widgets/product_addons_section.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_details_section.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_images_section.dart';
+import 'package:lines_test/features/product_details/presentation/widgets/product_recommendation_section.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_store_section.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_wholesale_prices_section.dart';
 
@@ -52,6 +53,9 @@ class ProductDetailsViewBody extends StatelessWidget {
             ),
             const SliverToBoxAdapter(
               child: ProductStoreSection(),
+            ),
+            const SliverToBoxAdapter(
+              child: ProductRecommendationSection(),
             ),
           ],
         ),
