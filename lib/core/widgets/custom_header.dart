@@ -21,8 +21,11 @@ class CustomHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Icon(
-          iconData,
+        InkWell(
+          onTap: onIconTap ?? () => Navigator.pop(context),
+          child: Icon(
+            iconData,
+          ),
         ),
         const Spacer(),
         Center(
