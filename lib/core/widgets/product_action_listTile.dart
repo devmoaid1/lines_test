@@ -12,14 +12,13 @@ class ProductActionListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.zero,
+      onTap: onTap,
       leading: Text(actionTitle,
           style: context.theme.textTheme.bodyLarge!
               .copyWith(color: AppColors.kSubHeadingsTextColor)),
-      trailing: InkWell(
-        onTap: onTap,
-        child: Icon(Icons.arrow_forward_ios,
-            size: 18.h, color: AppColors.kSubHeadingsTextColor),
-      ),
+      trailing: Icon(Icons.arrow_forward_ios,
+          size: 18.h, color: AppColors.kSubHeadingsTextColor),
     );
   }
 }
