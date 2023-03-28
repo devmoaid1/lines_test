@@ -24,4 +24,5 @@ abstract class Layouts {
   static EdgeInsets kButtonPadding = EdgeInsets.symmetric(vertical: 11.h);
   static BorderRadius kDefaultBorderRadius = BorderRadius.circular(10.r);
   static BorderRadius kSmallBorderRadius = BorderRadius.circular(8.r);
+  static BorderRadius kSecondaryBorderRadius = BorderRadius.circular(20.r);
 }

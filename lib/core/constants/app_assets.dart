@@ -17,6 +17,6 @@ abstract class AppAssets {
   static const String starFilledIcon = 'assets/icons/star_filled.svg';
   static const String tickIcon = 'assets/icons/tick.svg';
   static const String userAddIcon = 'assets/icons/user-add.svg';
-  static const String starUnfilled = 'assets/icons/star_filled.svg';
+  static const String starUnfilled = 'assets/icons/star_unfilled.svg';
   static const String arrowCircleLeft = 'assets/icons/arrow-circle-left.svg';
 }

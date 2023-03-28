@@ -40,13 +40,14 @@ class CustomHeader extends StatelessWidget {
         ),
         const Spacer(),
         isFromRating
-            ? TextButton(
-                onPressed: () {},
+            ? InkWell(
+                onTap: () {},
                 child: Text(
                   'اضافة تقييم',
                   style: context.theme.textTheme.bodyMedium!
                       .copyWith(color: AppColors.kAppPrimaryColor),
-                ))
+                ),
+              )
             : const SizedBox()
       ],
     );
