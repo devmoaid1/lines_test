@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/extensions/app_context.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
 import 'package:lines_test/core/theme/styles.dart';
+import 'package:lines_test/core/utils/enums/button_type.dart';
 import 'package:lines_test/core/widgets/custom_clickable_card.dart';
 import 'package:lines_test/core/widgets/sub_heading.dart';
 
@@ -67,21 +68,34 @@ class _ProductAddonsSectionState extends State<ProductAddonsSection> {
                 child: AddOnsListView(scrollController: _scrollController),
               ),
               20.h.vSpace,
-              Padding(
-                padding: Layouts.kSecondaryPadding,
-                child: CustomClickableCard(
-                    child: Text(
-                  'تحديد الكل',
-                  style: context.theme.textTheme.bodyMedium!.copyWith(
-                      color: AppColors.kAppPrimaryColor,
-                      fontWeight: FontWeight.w400),
-                )),
-              ),
+              const SelectAllButton(),
               20.h.vSpace,
             ],
           ),
-        )
+        ),
+        20.h.vSpace,
       ],
+    );
+  }
+}
+
+class SelectAllButton extends StatelessWidget {
+  const SelectAllButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: Layouts.kSecondaryPadding,
+      child: CustomClickableCard(
+          buttonType: ButtonType.outlined,
+          onTap: () {},
+          child: Text(
+            'تحديد الكل',
+            style: context.theme.textTheme.bodyMedium!.copyWith(
+                color: AppColors.kAppPrimaryColor, fontWeight: FontWeight.w400),
+          )),
     );
   }
 }
