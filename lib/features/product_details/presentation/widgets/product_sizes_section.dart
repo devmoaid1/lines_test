@@ -30,7 +30,7 @@ class ProductSizesSection extends StatelessWidget {
             },
           ),
         ),
-        10.h.vSpace,
+        26.h.vSpace,
       ],
     );
   }

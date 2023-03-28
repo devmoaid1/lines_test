@@ -8,4 +8,5 @@ abstract class AppColors {
   static const kSubHeadingsTextColor = Color(0xFF5F5F5F);
   static const kDescriptionTextColor = Color(0xFF9A9A9A);
   static const kDividerColor = Color(0xFFD9D9D9);
+  static const kCheckBoxBorderColor = Color(0xFFD1D1D6);
 }
