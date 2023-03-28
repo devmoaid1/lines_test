@@ -20,6 +20,7 @@ abstract class Styles {
 
 abstract class Layouts {
   static EdgeInsets kDefaultPadding = EdgeInsets.symmetric(horizontal: 25.w);
+  static EdgeInsets kSecondaryPadding = EdgeInsets.symmetric(horizontal: 20.w);
   static EdgeInsets kButtonPadding = EdgeInsets.symmetric(vertical: 11.h);
   static BorderRadius kDefaultBorderRadius = BorderRadius.circular(10.r);
   static BorderRadius kSmallBorderRadius = BorderRadius.circular(8.r);

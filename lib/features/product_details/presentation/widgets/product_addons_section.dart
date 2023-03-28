@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lines_test/core/extensions/app_context.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
 import 'package:lines_test/core/theme/styles.dart';
+import 'package:lines_test/core/widgets/custom_clickable_card.dart';
 import 'package:lines_test/core/widgets/sub_heading.dart';
 
 import '../../../../core/theme/app_colors.dart';
@@ -63,6 +65,17 @@ class _ProductAddonsSectionState extends State<ProductAddonsSection> {
               SizedBox(
                 height: 140.h,
                 child: AddOnsListView(scrollController: _scrollController),
+              ),
+              20.h.vSpace,
+              Padding(
+                padding: Layouts.kSecondaryPadding,
+                child: CustomClickableCard(
+                    child: Text(
+                  'تحديد الكل',
+                  style: context.theme.textTheme.bodyMedium!.copyWith(
+                      color: AppColors.kAppPrimaryColor,
+                      fontWeight: FontWeight.w400),
+                )),
               ),
               20.h.vSpace,
             ],
