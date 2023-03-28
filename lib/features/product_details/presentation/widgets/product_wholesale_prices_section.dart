@@ -74,7 +74,8 @@ class ProductWholeSalePricesSection extends StatelessWidget {
                 ]),
               ],
             ),
-          )
+          ),
+          25.h.vSpace
         ],
       ),
     );

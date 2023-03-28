@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
 import 'package:lines_test/core/theme/styles.dart';
 import 'package:lines_test/core/widgets/custom_header.dart';
+import 'package:lines_test/features/product_details/presentation/widgets/product_actions_section.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_details_section.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_images_section.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_wholesale_prices_section.dart';
@@ -35,6 +36,9 @@ class ProductDetailsViewBody extends StatelessWidget {
             ),
             const SliverToBoxAdapter(
               child: ProductWholeSalePricesSection(),
+            ),
+            const SliverToBoxAdapter(
+              child: ProductActionsSection(),
             ),
           ],
         ),
