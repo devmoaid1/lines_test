@@ -13,8 +13,11 @@ final textTheme = TextTheme(
 
 final eleveatedButtonTheme = ElevatedButtonThemeData(
   style: ButtonStyle(
-    textStyle: MaterialStateProperty.all(
-        TextStyle(fontSize: 18.sp, fontFamily: 'DIN', color: Colors.white)),
+    textStyle: MaterialStateProperty.all(TextStyle(
+        fontSize: 18.sp,
+        fontFamily: 'DIN',
+        color: Colors.white,
+        fontWeight: FontWeight.w500)),
     padding: MaterialStateProperty.all(Layouts.kButtonPadding),
     minimumSize: MaterialStateProperty.all(const Size(210, 48)),
     backgroundColor: MaterialStateProperty.all(AppColors.kAppPrimaryColor),

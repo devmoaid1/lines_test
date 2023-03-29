@@ -50,6 +50,7 @@ class AddRatingImagesSection extends StatelessWidget {
             10.h.vSpace,
           ],
         ),
+        10.h.vSpace,
         Row(
           children: [
             BlocBuilder<AddRatingCubit, AddRatingState>(
