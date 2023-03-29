@@ -4,8 +4,8 @@ import 'package:lines_test/core/extensions/spaces.dart';
 import 'package:lines_test/core/utils/show_bottom_modal.dart';
 import 'package:lines_test/core/widgets/product_action_listTile.dart';
 import 'package:lines_test/features/product_details/presentation/views/product_properties_view.dart';
-import 'package:lines_test/features/ratings/presentation/views/ratings_view.dart';
 
+import '../../../reviews/presentation/views/ratings_view.dart';
 import '../views/product_description_view.dart';
 
 class ProductActionsSection extends StatelessWidget {

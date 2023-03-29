@@ -6,7 +6,8 @@ void showCustomBottomModal(Widget child, BuildContext context) =>
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      shape: RoundedRectangleBorder(borderRadius: Layouts.kDefaultBorderRadius),
+      shape:
+          RoundedRectangleBorder(borderRadius: Layouts.kSecondaryBorderRadius),
       builder: (BuildContext context) {
         return child;
       },

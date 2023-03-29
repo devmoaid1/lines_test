@@ -13,7 +13,8 @@ class ProductPropertiesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: Layouts.kBottomModalBorderRadius),
       height: context.height * 0.75,
       child: Padding(
         padding: Layouts.kDefaultPadding,
@@ -21,7 +22,7 @@ class ProductPropertiesView extends StatelessWidget {
           children: [
             20.h.vSpace,
             const CustomHeader(
-                title: 'التفاصيل', iconData: Icons.close, isFromRating: false),
+                title: 'الخصائص', iconData: Icons.close, isFromRating: false),
             50.h.vSpace,
             Expanded(
               child: ListView.builder(

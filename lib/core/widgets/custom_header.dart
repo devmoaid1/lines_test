@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:lines_test/core/extensions/app_context.dart';
 import 'package:lines_test/core/theme/app_colors.dart';
+import 'package:lines_test/core/utils/show_bottom_modal.dart';
+import 'package:lines_test/features/reviews/presentation/views/add_rating_view.dart';
 
 class CustomHeader extends StatelessWidget {
   final String title;
@@ -19,7 +21,6 @@ class CustomHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
-      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         InkWell(
           onTap: onIconTap ?? () => Navigator.pop(context),
@@ -41,7 +42,11 @@ class CustomHeader extends StatelessWidget {
         const Spacer(),
         isFromRating
             ? InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                  Future.delayed(const Duration(seconds: 1));
+                  showCustomBottomModal(const AddRatingView(), context);
+                },
                 child: Text(
                   'اضافة تقييم',
                   style: context.theme.textTheme.bodyMedium!

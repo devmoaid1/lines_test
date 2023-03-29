@@ -15,7 +15,10 @@ class ProductDescriptionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      decoration: BoxDecoration(
+        borderRadius: Layouts.kBottomModalBorderRadius,
+        color: Colors.white,
+      ),
       height: context.height * 0.75,
       child: SingleChildScrollView(
         child: Padding(

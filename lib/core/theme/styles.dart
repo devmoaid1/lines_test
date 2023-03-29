@@ -25,4 +25,6 @@ abstract class Layouts {
   static BorderRadius kDefaultBorderRadius = BorderRadius.circular(10.r);
   static BorderRadius kSmallBorderRadius = BorderRadius.circular(8.r);
   static BorderRadius kSecondaryBorderRadius = BorderRadius.circular(20.r);
+  static BorderRadius kBottomModalBorderRadius = BorderRadius.only(
+      topLeft: Radius.circular(20.r), topRight: Radius.circular(20.r));
 }

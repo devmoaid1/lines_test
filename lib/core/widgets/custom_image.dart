@@ -7,13 +7,15 @@ class CustomImage extends StatelessWidget {
   final String? path;
   final double? height;
   final double? width;
+  final BorderRadius? borderRadius;
 
   const CustomImage(
       {super.key,
       this.fit = BoxFit.fill,
       this.height,
       this.width,
-      this.path = ""});
+      this.path = "",
+      this.borderRadius});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class CustomImage extends StatelessWidget {
       width: width,
       height: height,
       child: ClipRRect(
-          borderRadius: Layouts.kDefaultBorderRadius,
+          borderRadius: borderRadius ?? Layouts.kDefaultBorderRadius,
           child: Image.asset(
             path!,
             fit: fit,

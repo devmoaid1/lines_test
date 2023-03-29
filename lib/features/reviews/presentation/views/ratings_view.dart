@@ -15,7 +15,7 @@ class RatingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: Layouts.kDefaultBorderRadius,
+        borderRadius: Layouts.kBottomModalBorderRadius,
         color: Colors.white,
       ),
       height: context.height * 0.75,
