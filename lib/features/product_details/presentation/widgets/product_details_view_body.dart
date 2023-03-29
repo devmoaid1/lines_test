@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lines_test/core/extensions/spaces.dart';
 import 'package:lines_test/core/theme/styles.dart';
-import 'package:lines_test/core/widgets/custom_header.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/add_to_bascket_section.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_actions_section.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_addons_section.dart';
@@ -12,6 +9,7 @@ import 'package:lines_test/features/product_details/presentation/widgets/product
 import 'package:lines_test/features/product_details/presentation/widgets/product_store_section.dart';
 import 'package:lines_test/features/product_details/presentation/widgets/product_wholesale_prices_section.dart';
 
+import 'product_header_section.dart';
 import 'product_sizes_section.dart';
 
 class ProductDetailsViewBody extends StatelessWidget {
@@ -22,43 +20,37 @@ class ProductDetailsViewBody extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: Layouts.kDefaultPadding,
-        child: CustomScrollView(
-          physics: const BouncingScrollPhysics(),
+        child: const CustomScrollView(
+          physics: BouncingScrollPhysics(),
           slivers: [
-            const SliverToBoxAdapter(
-              child: CustomHeader(
-                  title: 'عطور وتجميل',
-                  iconData: Icons.arrow_back,
-                  isFromRating: false),
+            SliverToBoxAdapter(
+              child: ProductHeaderSection(),
             ),
             SliverToBoxAdapter(
-              child: 20.h.vSpace,
-            ),
-            const SliverToBoxAdapter(
               child: ProductImagesSection(),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: ProductDetailsSection(),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: ProductWholeSalePricesSection(),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: ProductActionsSection(),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: ProductSizesSection(),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: ProductAddonsSection(),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: ProductStoreSection(),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: ProductRecommendationSection(),
             ),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: AddToBascketSection(),
             ),
           ],

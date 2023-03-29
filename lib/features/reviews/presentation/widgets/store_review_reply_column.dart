@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/extensions/app_context.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
+import 'package:lines_test/features/reviews/data/models/store_reply.dart';
 
 import '../../../../core/constants/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -9,8 +10,10 @@ import '../../../../core/widgets/custom_svg_icon.dart';
 import 'rating_text.dart';
 
 class StoreReviewReplyColumn extends StatelessWidget {
+  final StoreReply storeReply;
   const StoreReviewReplyColumn({
     super.key,
+    required this.storeReply,
   });
 
   @override
@@ -29,7 +32,7 @@ class StoreReviewReplyColumn extends StatelessWidget {
               ),
               5.w.hSpace,
               Text(
-                'متجر تشانيل',
+                'متجر ${storeReply.storeName}',
                 style: context.theme.textTheme.bodyLarge!
                     .copyWith(color: AppColors.kHeadingsTextColor),
               ),
@@ -38,9 +41,8 @@ class StoreReviewReplyColumn extends StatelessWidget {
           5.h.vSpace,
           Container(
             margin: EdgeInsets.only(right: 30.w),
-            child: const RatingText(
-              text:
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu in at sit sed tristique..',
+            child: RatingText(
+              text: '${storeReply.reply}',
             ),
           )
         ],

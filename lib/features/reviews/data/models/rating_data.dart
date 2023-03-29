@@ -18,8 +18,13 @@ class ShortRating extends RatingModel {
 
 class ReviewRating extends RatingModel {
   final List<Review>? reviews;
-  const ReviewRating({double? rating, int? ratingCount, this.reviews})
-      : super(rating: rating, ratingCount: ratingCount);
+  final int? productId;
+  const ReviewRating({
+    double? rating,
+    int? ratingCount,
+    this.reviews,
+    this.productId,
+  }) : super(rating: rating, ratingCount: ratingCount);
   @override
-  List<Object?> get props => [rating, ratingCount, reviews];
+  List<Object?> get props => [rating, ratingCount, reviews, productId];
 }

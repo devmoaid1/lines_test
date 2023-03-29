@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
+import 'package:lines_test/features/reviews/data/models/review.dart';
 
 import '../../../../core/widgets/star_rating_row.dart';
 import 'rating_text.dart';
@@ -9,8 +10,10 @@ import 'review_user_details.dart';
 import 'store_review_reply_column.dart';
 
 class ReviewCard extends StatelessWidget {
+  final Review review;
   const ReviewCard({
     super.key,
+    required this.review,
   });
 
   @override
@@ -23,16 +26,23 @@ class ReviewCard extends StatelessWidget {
           height: 9.h,
         ),
         10.h.vSpace,
-        const RatingText(
-          text:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu in at sit sed tristique..',
+        RatingText(
+          text: review.comment!,
         ),
         10.h.vSpace,
-        const ReviewImagesList(),
+        review.images.isNotEmpty
+            ? ReviewImagesList(
+                images: review.images,
+              )
+            : const SizedBox(),
         10.h.vSpace,
-        const ReviewUserDetails(),
+        ReviewUserDetails(review: review),
         10.h.vSpace,
-        const StoreReviewReplyColumn()
+        review.storeReply != null
+            ? StoreReviewReplyColumn(
+                storeReply: review.storeReply!,
+              )
+            : const SizedBox()
       ],
     );
   }

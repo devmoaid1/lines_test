@@ -8,22 +8,29 @@ import 'package:lines_test/features/product_details/presentation/viewmodels/add_
 import 'package:lines_test/features/product_details/presentation/viewmodels/product_details_cubit/product_details_cubit.dart';
 import 'package:lines_test/features/product_details/presentation/viewmodels/properties_cubit/properties_cubit.dart';
 import 'package:lines_test/features/product_details/presentation/viewmodels/recommendation_cubit/recommendation_cubit.dart';
+import 'package:lines_test/features/reviews/data/repositories/rating_repository.dart';
+import 'package:lines_test/features/reviews/presentation/viewmodels/cubit/rating_cubit.dart';
 
 import '../features/product_details/presentation/viewmodels/sizes_cubit/sizes_cubit.dart';
 
 final sl = GetIt.instance;
 
 void setupLocator() {
-  sl.registerLazySingleton(() => CartCubit());
+  // repositories (data)
   sl.registerLazySingleton<ProductDetailsRepository>(
       () => ProductDetailsRepositoryImpl());
   sl.registerLazySingleton<AddOnsRepository>(() => AddOnsRepositoryImpl());
   sl.registerLazySingleton<RecommendationRepository>(
       () => RecommendationRepositoryImpl());
 
+  sl.registerLazySingleton<RatingRepository>(() => RatingRepositoryImpl());
+
+  // cubits (business logic)
+  sl.registerLazySingleton(() => CartCubit());
   sl.registerFactory(() => ProductDetailsCubit(productDetailsRepository: sl()));
   sl.registerFactory(() => SizesCubit(productDetailsRepository: sl()));
   sl.registerFactory(() => AddOnsCubit(addOnsRepository: sl()));
   sl.registerFactory(() => RecommendationCubit(recommendationRepository: sl()));
   sl.registerFactory(() => PropertiesCubit(productDetailsRepository: sl()));
+  sl.registerFactory(() => RatingCubit(ratingRepository: sl()));
 }

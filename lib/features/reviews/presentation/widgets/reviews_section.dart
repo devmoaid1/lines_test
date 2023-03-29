@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lines_test/features/reviews/presentation/viewmodels/cubit/rating_cubit.dart';
 
 import 'review_card.dart';
 
@@ -7,12 +9,18 @@ class ReviewsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: ListView.separated(
+    return Expanded(child: BlocBuilder<RatingCubit, RatingState>(
+      builder: (context, state) {
+        return ListView.separated(
             itemBuilder: (context, index) {
-              return const ReviewCard();
+              final review = state.rating.reviews![index];
+              return ReviewCard(
+                review: review,
+              );
             },
             separatorBuilder: (context, index) => const Divider(),
-            itemCount: 2));
+            itemCount: state.rating.reviews!.length);
+      },
+    ));
   }
 }
