@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:lines_test/features/reviews/data/models/rating_data.dart';
 
 abstract class Product extends Equatable {
   final int? id;
@@ -8,8 +9,10 @@ abstract class Product extends Equatable {
   final double? currentPrice;
   final int? stockQuantity;
   final String? description;
+  final ShortRating? shortRating;
 
   const Product({
+    this.shortRating,
     this.id,
     this.name,
     this.imagePaths = const [],
@@ -28,9 +31,11 @@ class NormalProduct extends Product {
       double? currentPrice,
       int? stockQuantity,
       String? description,
+      ShortRating? shortRating,
       int? id})
       : super(
           name: name,
+          shortRating: shortRating,
           id: id,
           imagePaths: imagePaths,
           originalPrice: originalPrice,
@@ -47,7 +52,8 @@ class NormalProduct extends Product {
         currentPrice,
         stockQuantity,
         description,
-        id
+        id,
+        shortRating
       ];
 }
 
@@ -62,6 +68,7 @@ class RecommendedProduct extends Product {
     double? currentPrice,
     int? stockQuantity,
     String? description,
+    ShortRating? shortRating,
     this.relativeId,
   }) : super(
             name: name,
@@ -70,6 +77,7 @@ class RecommendedProduct extends Product {
             currentPrice: currentPrice,
             stockQuantity: stockQuantity,
             description: description,
+            shortRating: shortRating,
             id: id);
 
   @override
@@ -81,6 +89,7 @@ class RecommendedProduct extends Product {
         stockQuantity,
         description,
         relativeId,
-        id
+        id,
+        shortRating
       ];
 }

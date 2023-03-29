@@ -3,14 +3,14 @@ import 'package:equatable/equatable.dart';
 import 'review.dart';
 
 abstract class RatingModel extends Equatable {
-  final int? rating;
+  final double? rating;
   final int? ratingCount;
 
   const RatingModel({this.rating, this.ratingCount});
 }
 
 class ShortRating extends RatingModel {
-  const ShortRating({int? rating, int? ratingCount})
+  const ShortRating({double? rating, int? ratingCount})
       : super(rating: rating, ratingCount: ratingCount);
   @override
   List<Object?> get props => [rating, ratingCount];
@@ -18,7 +18,7 @@ class ShortRating extends RatingModel {
 
 class ReviewRating extends RatingModel {
   final List<Review>? reviews;
-  const ReviewRating({int? rating, int? ratingCount, this.reviews})
+  const ReviewRating({double? rating, int? ratingCount, this.reviews})
       : super(rating: rating, ratingCount: ratingCount);
   @override
   List<Object?> get props => [rating, ratingCount, reviews];
