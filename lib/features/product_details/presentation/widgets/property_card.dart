@@ -3,12 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/extensions/app_context.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../../data/models/property.dart';
 
 class PropertyCard extends StatelessWidget {
   final bool isColored;
+  final Property property;
   const PropertyCard({
     super.key,
     required this.isColored,
+    required this.property,
   });
 
   @override
@@ -22,7 +25,7 @@ class PropertyCard extends StatelessWidget {
           SizedBox(
               width: 70.w,
               child: Text(
-                'نفحات قاعدية',
+                property.type!,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: context.theme.textTheme.bodySmall!.copyWith(
@@ -32,7 +35,7 @@ class PropertyCard extends StatelessWidget {
           SizedBox(
             width: 170.w,
             child: Text(
-              'White Musk, Cashmeran, Cedar',
+              property.title!,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: context.theme.textTheme.bodySmall!.copyWith(

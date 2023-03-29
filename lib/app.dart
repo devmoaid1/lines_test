@@ -3,13 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/theme/light_theme.dart';
 import 'package:lines_test/features/product_details/presentation/viewmodels/add_ons_cubit/add_ons_cubit.dart';
-import 'package:lines_test/features/product_details/presentation/viewmodels/cubit/sizes_cubit.dart';
+
 import 'package:lines_test/features/product_details/presentation/viewmodels/product_details_cubit/product_details_cubit.dart';
 import 'package:lines_test/features/product_details/presentation/viewmodels/recommendation_cubit/recommendation_cubit.dart';
 
 import 'core/constants/app_strings.dart';
 import 'core/cubits/cubit/cart_cubit.dart';
 import 'core/dependencies.dart';
+import 'features/product_details/presentation/viewmodels/sizes_cubit/sizes_cubit.dart';
 import 'features/product_details/presentation/views/product_details_view.dart';
 
 class LinesApp extends StatelessWidget {

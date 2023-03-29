@@ -4,9 +4,12 @@ import 'package:lines_test/features/product_details/data/repositories/add_ons_re
 import 'package:lines_test/features/product_details/data/repositories/product_details_repository.dart';
 import 'package:lines_test/features/product_details/data/repositories/recommendation_repository.dart';
 import 'package:lines_test/features/product_details/presentation/viewmodels/add_ons_cubit/add_ons_cubit.dart';
-import 'package:lines_test/features/product_details/presentation/viewmodels/cubit/sizes_cubit.dart';
+
 import 'package:lines_test/features/product_details/presentation/viewmodels/product_details_cubit/product_details_cubit.dart';
+import 'package:lines_test/features/product_details/presentation/viewmodels/properties_cubit/properties_cubit.dart';
 import 'package:lines_test/features/product_details/presentation/viewmodels/recommendation_cubit/recommendation_cubit.dart';
+
+import '../features/product_details/presentation/viewmodels/sizes_cubit/sizes_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -22,4 +25,5 @@ void setupLocator() {
   sl.registerFactory(() => SizesCubit(productDetailsRepository: sl()));
   sl.registerFactory(() => AddOnsCubit(addOnsRepository: sl()));
   sl.registerFactory(() => RecommendationCubit(recommendationRepository: sl()));
+  sl.registerFactory(() => PropertiesCubit(productDetailsRepository: sl()));
 }

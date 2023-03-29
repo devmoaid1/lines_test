@@ -60,6 +60,11 @@ class ProductWholeSalePricesSection extends StatelessWidget {
                   DataCell(Center(child: Text('10 ر.س'))),
                   DataCell(Center(child: Text('30%'))),
                 ]),
+                const DataRow(cells: [
+                  DataCell(Center(child: Text('1-10'))),
+                  DataCell(Center(child: Text('10 ر.س'))),
+                  DataCell(Center(child: Text('30%'))),
+                ]),
                 DataRow(cells: [
                   DataCell(Row(
                     mainAxisAlignment: MainAxisAlignment.center,

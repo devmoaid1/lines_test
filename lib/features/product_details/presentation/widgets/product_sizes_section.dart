@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
 import 'package:lines_test/core/widgets/sub_heading.dart';
-import 'package:lines_test/features/product_details/presentation/viewmodels/cubit/sizes_cubit.dart';
 
+import '../viewmodels/sizes_cubit/sizes_cubit.dart';
 import 'size_card.dart';
 
 class ProductSizesSection extends StatelessWidget {
