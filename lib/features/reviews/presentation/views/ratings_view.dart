@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/extensions/app_context.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
-import 'package:lines_test/features/reviews/presentation/viewmodels/cubit/rating_cubit.dart';
+import 'package:lines_test/features/reviews/presentation/viewmodels/rating_cubit/rating_cubit.dart';
 
 import '../../../../core/dependencies.dart';
 import '../../../../core/theme/styles.dart';

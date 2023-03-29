@@ -9,7 +9,8 @@ import 'package:lines_test/features/product_details/presentation/viewmodels/prod
 import 'package:lines_test/features/product_details/presentation/viewmodels/properties_cubit/properties_cubit.dart';
 import 'package:lines_test/features/product_details/presentation/viewmodels/recommendation_cubit/recommendation_cubit.dart';
 import 'package:lines_test/features/reviews/data/repositories/rating_repository.dart';
-import 'package:lines_test/features/reviews/presentation/viewmodels/cubit/rating_cubit.dart';
+import 'package:lines_test/features/reviews/presentation/viewmodels/add_rating/add_rating_cubit.dart';
+import 'package:lines_test/features/reviews/presentation/viewmodels/rating_cubit/rating_cubit.dart';
 
 import '../features/product_details/presentation/viewmodels/sizes_cubit/sizes_cubit.dart';
 
@@ -33,4 +34,5 @@ void setupLocator() {
   sl.registerFactory(() => RecommendationCubit(recommendationRepository: sl()));
   sl.registerFactory(() => PropertiesCubit(productDetailsRepository: sl()));
   sl.registerFactory(() => RatingCubit(ratingRepository: sl()));
+  sl.registerFactory(() => AddRatingCubit());
 }

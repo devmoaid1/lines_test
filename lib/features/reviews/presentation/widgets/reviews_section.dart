@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lines_test/features/reviews/presentation/viewmodels/cubit/rating_cubit.dart';
+import 'package:lines_test/features/reviews/presentation/viewmodels/rating_cubit/rating_cubit.dart';
 
 import 'review_card.dart';
 

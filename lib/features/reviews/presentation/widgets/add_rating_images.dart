@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/extensions/app_context.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
+import 'package:lines_test/features/reviews/presentation/viewmodels/add_rating/add_rating_cubit.dart';
 
 import '../../../../core/constants/app_assets.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -50,7 +52,14 @@ class AddRatingImagesSection extends StatelessWidget {
         ),
         Row(
           children: [
-            const CustomCheckBox(isActive: true),
+            BlocBuilder<AddRatingCubit, AddRatingState>(
+              builder: (context, state) {
+                return InkWell(
+                    onTap: () => BlocProvider.of<AddRatingCubit>(context)
+                        .changeHideIdentityCheck(state.hideIdentity!),
+                    child: CustomCheckBox(isActive: state.hideIdentity!));
+              },
+            ),
             10.w.hSpace,
             Text(
               'هل تريد اخفاء هويتك',
