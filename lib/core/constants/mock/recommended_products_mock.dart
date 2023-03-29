@@ -4,7 +4,7 @@ import '../app_assets.dart';
 
 final recommendedProducts = [
   const RecommendedProduct(
-      id: 1,
+      id: 2,
       relativeId: 1,
       stockQuantity: 10,
       currentPrice: 2500,
@@ -18,7 +18,7 @@ final recommendedProducts = [
       ],
       name: 'عطر شانيل 5 مل'),
   const RecommendedProduct(
-      id: 1,
+      id: 4,
       relativeId: 1,
       stockQuantity: 10,
       currentPrice: 2500,
@@ -30,9 +30,9 @@ final recommendedProducts = [
         AppAssets.recommendedProductImagePath,
         AppAssets.recommendedProductImagePath,
       ],
-      name: 'عطر شانيل 5 مل'),
+      name: 'عطر رجالي'),
   const RecommendedProduct(
-      id: 1,
+      id: 3,
       relativeId: 1,
       stockQuantity: 10,
       currentPrice: 2500,
@@ -44,5 +44,5 @@ final recommendedProducts = [
         AppAssets.recommendedProductImagePath,
         AppAssets.recommendedProductImagePath,
       ],
-      name: 'عطر شانيل 5 مل'),
+      name: 'عطر رجالي'),
 ];

@@ -27,7 +27,9 @@ class CartCubit extends Cubit<CartState> {
       _items.add(CartItem(quantity: 1, product: product));
     }
 
-    emit(CartState(cartItems: _items));
+    List<CartItem> itemsCopy = List.from(_items);
+
+    emit(CartState(cartItems: itemsCopy));
   }
 
   void incrementQuantity(Product product) {
@@ -35,10 +37,12 @@ class CartCubit extends Cubit<CartState> {
         (item) => item.product!.id == product.id,
         orElse: () => const CartItem());
     if (existingItem.product?.id != null) {
-      existingItem = CartItem(
-          quantity: existingItem.quantity! + 1, product: existingItem.product);
+      int index = _items.indexOf(existingItem);
+      _items[index] =
+          existingItem.copyWith(quantity: existingItem.quantity! + 1);
     }
-    emit(CartState(cartItems: _items));
+    List<CartItem> itemsCopy = List.from(_items);
+    emit(CartState(cartItems: itemsCopy));
   }
 
   void decrementQuantity(Product product) {
@@ -46,11 +50,14 @@ class CartCubit extends Cubit<CartState> {
         (item) => item.product!.id == product.id,
         orElse: () => const CartItem());
     if (existingItem.quantity! > 1) {
-      existingItem = CartItem(
-          quantity: existingItem.quantity! - 1, product: existingItem.product);
+      int index = _items.indexOf(existingItem);
+
+      _items[index] =
+          existingItem.copyWith(quantity: existingItem.quantity! - 1);
     } else {
       _items.remove(existingItem);
     }
-    emit(CartState(cartItems: _items));
+    List<CartItem> itemsCopy = List.from(_items);
+    emit(CartState(cartItems: itemsCopy));
   }
 }

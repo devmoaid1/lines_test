@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
 import 'package:lines_test/core/widgets/sub_heading.dart';
+import 'package:lines_test/features/product_details/presentation/viewmodels/recommendation_cubit/recommendation_cubit.dart';
 
 import 'recommendation_card.dart';
 
@@ -17,14 +19,21 @@ class ProductRecommendationSection extends StatelessWidget {
         20.h.vSpace,
         SizedBox(
           height: 250.h,
-          child: ListView.builder(
-            physics: const BouncingScrollPhysics(),
-            itemCount: 3,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return const RecommendationCard();
-            },
-          ),
+          child: BlocBuilder<RecommendationCubit, RecommendationState>(
+              builder: (context, state) {
+            return ListView.builder(
+              key: UniqueKey(),
+              physics: const BouncingScrollPhysics(),
+              itemCount: state.recommendations!.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                final product = state.recommendations![index];
+                return RecommendationCard(
+                  product: product,
+                );
+              },
+            );
+          }),
         ),
         20.h.vSpace
       ],
