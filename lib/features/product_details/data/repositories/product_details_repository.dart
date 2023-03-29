@@ -7,14 +7,14 @@ import 'package:lines_test/features/product_details/data/models/size_model.dart'
 import '../../../../core/constants/mock/product_mock.dart';
 
 abstract class ProductDetailsRepository {
-  Product getProductDetails();
+  NormalProduct getProductDetails();
   List<Property> getProductProperties({required int productId});
   List<SizeModel> getProductSizes({required int productId});
 }
 
 class ProductDetailsRepositoryImpl implements ProductDetailsRepository {
   @override
-  Product getProductDetails() {
+  NormalProduct getProductDetails() {
     return mockProduct;
   }
 
