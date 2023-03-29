@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
 import 'package:lines_test/core/widgets/sub_heading.dart';
+import 'package:lines_test/features/product_details/presentation/viewmodels/cubit/sizes_cubit.dart';
 
 import 'size_card.dart';
 
@@ -17,17 +19,22 @@ class ProductSizesSection extends StatelessWidget {
         10.h.vSpace,
         SizedBox(
           height: 55.h,
-          child: ListView.builder(
-            itemCount: 3,
-            physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.zero,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return SizeCard(
-                isSelected: index == 1,
-                size: '100 مل (500 SAR)',
-              );
-            },
+          child: BlocBuilder<SizesCubit, SizesState>(
+            builder: (context, state) => ListView.builder(
+              itemCount: state.sizes!.length,
+              physics: const BouncingScrollPhysics(),
+              padding: EdgeInsets.zero,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                final size = state.sizes![index];
+                return SizeCard(
+                  onPressed: () =>
+                      BlocProvider.of<SizesCubit>(context).selectSize(index),
+                  isSelected: state.selectedSizeIndex == index,
+                  size: size,
+                );
+              },
+            ),
           ),
         ),
         26.h.vSpace,

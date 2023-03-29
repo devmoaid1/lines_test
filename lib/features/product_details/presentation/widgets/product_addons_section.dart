@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lines_test/core/extensions/app_context.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
@@ -6,6 +7,7 @@ import 'package:lines_test/core/theme/styles.dart';
 import 'package:lines_test/core/utils/enums/button_type.dart';
 import 'package:lines_test/core/widgets/custom_clickable_card.dart';
 import 'package:lines_test/core/widgets/sub_heading.dart';
+import 'package:lines_test/features/product_details/presentation/viewmodels/add_ons_cubit/add_ons_cubit.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import 'add_ons_list_view.dart';
@@ -90,7 +92,7 @@ class SelectAllButton extends StatelessWidget {
       padding: Layouts.kSecondaryPadding,
       child: CustomClickableCard(
           buttonType: ButtonType.outlined,
-          onTap: () {},
+          onTap: () => BlocProvider.of<AddOnsCubit>(context).selectAll(),
           child: Text(
             'تحديد الكل',
             style: context.theme.textTheme.bodyMedium!.copyWith(

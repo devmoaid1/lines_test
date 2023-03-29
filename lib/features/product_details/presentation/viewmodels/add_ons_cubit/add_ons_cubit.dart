@@ -20,16 +20,19 @@ class AddOnsCubit extends Cubit<AddOnsState> {
   }
 
   void selectAddOn({required AddOn addOn}) {
-    bool isSelected = _selectedAddOn.contains(addOn);
+    List<AddOn> selectedAddonsCopy = List.from(_selectedAddOn);
+    bool isSelected = selectedAddonsCopy.contains(addOn);
 
     if (!isSelected) {
       // if not selected add to be selected
-      _selectedAddOn.add(addOn);
+
+      selectedAddonsCopy.add(addOn);
     } else {
       // if selected remove to unselect
-      _selectedAddOn.remove(addOn);
+      selectedAddonsCopy.remove(addOn);
     }
-    emit(state.copyWith(selectedAddOn: _selectedAddOn));
+    _selectedAddOn = List.from(selectedAddonsCopy);
+    emit(state.copyWith(selectedAddOn: selectedAddonsCopy));
   }
 
   void selectAll() {
