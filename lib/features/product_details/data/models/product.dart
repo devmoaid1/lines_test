@@ -9,10 +9,12 @@ abstract class Product extends Equatable {
   final double? currentPrice;
   final int? stockQuantity;
   final String? description;
+  final String? fullDescription;
   final ShortRating? shortRating;
 
   const Product({
     this.shortRating,
+    this.fullDescription,
     this.id,
     this.name,
     this.imagePaths = const [],
@@ -32,17 +34,18 @@ class NormalProduct extends Product {
       int? stockQuantity,
       String? description,
       ShortRating? shortRating,
+      String? fullDescription,
       int? id})
       : super(
-          name: name,
-          shortRating: shortRating,
-          id: id,
-          imagePaths: imagePaths,
-          originalPrice: originalPrice,
-          currentPrice: currentPrice,
-          stockQuantity: stockQuantity,
-          description: description,
-        );
+            name: name,
+            shortRating: shortRating,
+            id: id,
+            imagePaths: imagePaths,
+            originalPrice: originalPrice,
+            currentPrice: currentPrice,
+            stockQuantity: stockQuantity,
+            description: description,
+            fullDescription: fullDescription);
 
   @override
   List<Object?> get props => [
@@ -68,6 +71,7 @@ class RecommendedProduct extends Product {
     double? currentPrice,
     int? stockQuantity,
     String? description,
+    String? fullDescription,
     ShortRating? shortRating,
     this.relativeId,
   }) : super(
@@ -78,6 +82,7 @@ class RecommendedProduct extends Product {
             stockQuantity: stockQuantity,
             description: description,
             shortRating: shortRating,
+            fullDescription: fullDescription,
             id: id);
 
   @override
@@ -90,6 +95,7 @@ class RecommendedProduct extends Product {
         description,
         relativeId,
         id,
+        fullDescription,
         shortRating
       ];
 }

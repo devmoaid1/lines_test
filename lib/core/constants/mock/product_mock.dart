@@ -8,6 +8,8 @@ const mockProduct = NormalProduct(
     stockQuantity: 10,
     shortRating: ShortRating(rating: 5.0, ratingCount: 5),
     originalPrice: 25,
+    fullDescription:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu in at sit sed tristique. Massa cursus pellentesque laoreet dignissim lacus etiam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. mauris.',
     description:
         'Lorem ipsum dolor sit amet, ipiscingisl amet orci ipsum dis lectus hac mauris.',
     imagePaths: [

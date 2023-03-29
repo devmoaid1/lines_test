@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lines_test/core/constants/app_assets.dart';
 import 'package:lines_test/core/extensions/app_context.dart';
 import 'package:lines_test/core/extensions/spaces.dart';
 import 'package:lines_test/core/theme/styles.dart';
 import 'package:lines_test/core/widgets/custom_header.dart';
 import 'package:lines_test/core/widgets/custom_image.dart';
+import 'package:lines_test/features/product_details/data/models/product.dart';
 
 import '../../../../core/theme/app_colors.dart';
 
 class ProductDescriptionView extends StatelessWidget {
-  const ProductDescriptionView({super.key});
+  final Product product;
+  const ProductDescriptionView({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class ProductDescriptionView extends StatelessWidget {
                   isFromRating: false),
               50.h.vSpace,
               Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu in at sit sed tristique. Massa cursus pellentesque laoreet dignissim lacus etiam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. mauris.',
+                product.fullDescription!,
                 textAlign: TextAlign.right,
                 style: context.theme.textTheme.bodyLarge!.copyWith(
                     fontWeight: FontWeight.w400,
@@ -40,14 +41,14 @@ class ProductDescriptionView extends StatelessWidget {
               ),
               4.h.vSpace,
               ListView.builder(
-                itemCount: 3,
+                itemCount: product.imagePaths!.length,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return Container(
                     margin: EdgeInsets.only(bottom: 5.h),
                     child: CustomImage(
-                      path: AppAssets.productImagePath,
+                      path: product.imagePaths![index],
                       height: 254.h,
                       width: context.width,
                     ),
