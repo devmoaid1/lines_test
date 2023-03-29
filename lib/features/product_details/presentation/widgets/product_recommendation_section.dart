@@ -15,6 +15,7 @@ class ProductRecommendationSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        20.h.vSpace,
         const SubHeading(title: 'منتجات موصى بها من المتجر'),
         20.h.vSpace,
         SizedBox(
