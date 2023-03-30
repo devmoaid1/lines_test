@@ -26,14 +26,15 @@ class ProductPricesRow extends StatelessWidget {
             Text('${state.product!.originalPrice!.round()} ر.س',
                 style: context.theme.textTheme.bodyLarge!.copyWith(
                   color: AppColors.kDescriptionTextColor,
+                  fontWeight: FontWeight.w400,
                   decoration: TextDecoration.lineThrough,
                 )),
             11.w.hSpace,
             Text(
                 'خصم ${100 - ((state.product!.currentPrice!.round() / state.product!.originalPrice!.round()) * 100).round()}%',
                 style: context.theme.textTheme.bodyLarge!.copyWith(
-                  color: const Color(0xFF02B503),
-                )),
+                    color: AppColors.kDeepGreenColor,
+                    fontWeight: FontWeight.w400)),
           ],
         );
       },

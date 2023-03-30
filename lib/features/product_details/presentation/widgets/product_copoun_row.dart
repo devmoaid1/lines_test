@@ -30,7 +30,7 @@ class ProductCopounRow extends StatelessWidget {
                 'قسيمة خصم 5%',
                 textAlign: TextAlign.center,
                 style: context.theme.textTheme.bodySmall!
-                    .copyWith(color: Colors.white),
+                    .copyWith(color: Colors.white, fontWeight: FontWeight.w400),
               ),
             ),
             Positioned(

@@ -33,15 +33,20 @@ class AddToBascketButton extends StatelessWidget {
               (element) => element.product == product,
             )
             .quantity!;
-        return Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.h),
-          child: CartQuantityRow(product: product, quantity: quantity),
-        );
+        return product is RecommendedProduct
+            ? SizedBox(
+                height: 36.h,
+                child: CartQuantityRow(product: product, quantity: quantity))
+            : Container(
+                margin: EdgeInsets.only(bottom: 20.h),
+                height: 48.h,
+                child: CartQuantityRow(product: product, quantity: quantity));
       } else {
         return product is RecommendedProduct
             ? CustomClickableCard(
                 onTap: () => addToCart(),
                 buttonType: ButtonType.outlined,
+                padding: EdgeInsets.symmetric(vertical: 6.h),
                 child: Text(
                   'اضافة للسلة',
                   style: context.theme.textTheme.bodyMedium!

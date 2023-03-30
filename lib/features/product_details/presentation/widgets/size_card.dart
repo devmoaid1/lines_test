@@ -19,7 +19,7 @@ class SizeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onPressed,
       child: Container(
         margin: EdgeInsets.only(left: 30.w),
@@ -30,7 +30,7 @@ class SizeCard extends StatelessWidget {
                 color: isSelected
                     ? AppColors.kAppPrimaryColor
                     : AppColors.kDescriptionTextColor,
-                width: 2)),
+                width: 1)),
         child: Center(
             child: Text(
           '${size.type!}(${size.price} SAR)',

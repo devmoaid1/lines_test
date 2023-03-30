@@ -18,7 +18,7 @@ class ProductActionListTile extends StatelessWidget {
           style: context.theme.textTheme.bodyLarge!
               .copyWith(color: AppColors.kSubHeadingsTextColor)),
       trailing: Icon(Icons.arrow_forward_ios,
-          size: 18.h, color: AppColors.kSubHeadingsTextColor),
+          size: 13.h, color: AppColors.kSubHeadingsTextColor),
     );
   }
 }

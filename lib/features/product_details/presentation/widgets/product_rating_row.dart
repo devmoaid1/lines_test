@@ -20,7 +20,11 @@ class ProductRatingRow extends StatelessWidget {
       builder: (context, state) {
         return Row(
           children: [
-            const CustomSvgIcon(iconPath: AppAssets.starFilledIcon),
+            CustomSvgIcon(
+              iconPath: AppAssets.starFilledIcon,
+              width: 16.w,
+              height: 16.h,
+            ),
             2.w.hSpace,
             Text(
               state.product!.shortRating!.rating.toString(),

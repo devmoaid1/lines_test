@@ -39,7 +39,7 @@ class StoreActionsRow extends StatelessWidget {
           ),
           onTap: () {},
         ),
-        5.w.hSpace,
+        100.w.hSpace,
         CustomClickableCard(
           buttonType: ButtonType.outlined,
           padding: EdgeInsets.symmetric(vertical: 7.h, horizontal: 25.w),

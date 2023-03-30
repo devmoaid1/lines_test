@@ -47,13 +47,15 @@ class _ProductAddonsSectionState extends State<ProductAddonsSection> {
             InkWell(
               onTap: () => handleScroll(false, _scrollController),
               child: Icon(Icons.arrow_back_ios,
-                  size: 18.h, color: AppColors.kSubHeadingsTextColor),
+                  size: 15.h, color: AppColors.kSubHeadingsTextColor),
             ),
+            10.w.hSpace,
             InkWell(
               onTap: () => handleScroll(true, _scrollController),
               child: Icon(Icons.arrow_forward_ios,
-                  size: 18.h, color: AppColors.kSubHeadingsTextColor),
+                  size: 15.h, color: AppColors.kSubHeadingsTextColor),
             ),
+            15.w.hSpace,
           ],
         ),
         20.h.vSpace,

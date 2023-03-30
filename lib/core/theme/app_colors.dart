@@ -10,4 +10,5 @@ abstract class AppColors {
   static const kDividerColor = Color(0xFFD9D9D9);
   static const kCheckBoxBorderColor = Color(0xFFD1D1D6);
   static const kPropertyRowColor = Color(0xFFF2F6FC);
+  static const kDeepGreenColor = Color(0xFF02B503);
 }
