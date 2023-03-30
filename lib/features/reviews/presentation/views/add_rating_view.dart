@@ -38,6 +38,7 @@ class AddRatingView extends StatelessWidget {
                     children: [
                       20.h.vSpace,
                       const CustomHeader(
+                          smallHeading: true,
                           title: 'أضافة تقييم',
                           iconData: Icons.close,
                           isFromRating: false),

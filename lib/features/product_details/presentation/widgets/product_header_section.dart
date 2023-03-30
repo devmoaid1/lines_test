@@ -15,6 +15,7 @@ class ProductHeaderSection extends StatelessWidget {
       children: [
         10.h.vSpace,
         const CustomHeader(
+            smallHeading: false,
             title: 'عطور وتجميل',
             iconData: Icons.arrow_back,
             isFromRating: false),

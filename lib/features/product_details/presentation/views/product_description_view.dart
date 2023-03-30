@@ -28,6 +28,7 @@ class ProductDescriptionView extends StatelessWidget {
             children: [
               20.h.vSpace,
               const CustomHeader(
+                  smallHeading: true,
                   title: 'التفاصيل',
                   iconData: Icons.close,
                   isFromRating: false),

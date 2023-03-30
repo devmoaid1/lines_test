@@ -30,6 +30,7 @@ class RatingsView extends StatelessWidget {
             children: [
               20.h.vSpace,
               const CustomHeader(
+                  smallHeading: true,
                   title: 'التقييمات',
                   iconData: Icons.close,
                   isFromRating: true),

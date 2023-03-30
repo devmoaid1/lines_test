@@ -28,17 +28,25 @@ class CartQuantityRow extends StatelessWidget {
       children: [
         InkWell(
             onTap: () => sl<CartCubit>().decrementQuantity(product),
-            child: const CustomSvgIcon(iconPath: AppAssets.minusIcon)),
-        23.w.hSpace,
+            child: CustomSvgIcon(
+              iconPath: AppAssets.minusIcon,
+              width: 20.w,
+              height: 20.h,
+            )),
+        17.w.hSpace,
         Text(
           '$quantity',
           style: context.theme.textTheme.bodyLarge!
               .copyWith(color: AppColors.kHeadingsTextColor),
         ),
-        23.w.hSpace,
+        17.w.hSpace,
         InkWell(
             onTap: () => sl<CartCubit>().incrementQuantity(product),
-            child: const CustomSvgIcon(iconPath: AppAssets.addIcon)),
+            child: CustomSvgIcon(
+              iconPath: AppAssets.addIcon,
+              width: 20.w,
+              height: 20.h,
+            )),
       ],
     );
   }

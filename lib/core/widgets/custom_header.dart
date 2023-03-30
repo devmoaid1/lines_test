@@ -12,12 +12,14 @@ class CustomHeader extends StatelessWidget {
   final IconData iconData;
   final VoidCallback? onIconTap;
   final bool isFromRating;
+  final bool smallHeading; // 16 (small) 18(large)
   const CustomHeader(
       {super.key,
       this.onIconTap,
       required this.title,
       required this.iconData,
-      required this.isFromRating});
+      required this.isFromRating,
+      required this.smallHeading});
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +38,13 @@ class CustomHeader extends StatelessWidget {
             title,
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
-            style: context.theme.textTheme.headlineMedium!.copyWith(
-              color: AppColors.kHeadingsTextColor,
-            ),
+            style: smallHeading
+                ? context.theme.textTheme.bodyLarge!.copyWith(
+                    color: AppColors.kHeadingsTextColor,
+                  )
+                : context.theme.textTheme.headlineMedium!.copyWith(
+                    color: AppColors.kHeadingsTextColor,
+                  ),
           ),
         ),
         const Spacer(),

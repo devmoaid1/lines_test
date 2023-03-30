@@ -9,7 +9,6 @@ import '../../../../core/dependencies.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../../core/widgets/custom_header.dart';
 import '../widgets/properties_list_view.dart';
-import '../widgets/property_card.dart';
 
 class ProductPropertiesView extends StatelessWidget {
   const ProductPropertiesView({super.key});
@@ -29,7 +28,10 @@ class ProductPropertiesView extends StatelessWidget {
             children: [
               20.h.vSpace,
               const CustomHeader(
-                  title: 'الخصائص', iconData: Icons.close, isFromRating: false),
+                  smallHeading: true,
+                  title: 'الخصائص',
+                  iconData: Icons.close,
+                  isFromRating: false),
               50.h.vSpace,
               const Expanded(
                 child: PropertiesListView(),
