@@ -21,41 +21,55 @@ class ProductWholeSaleTable extends StatelessWidget {
           .copyWith(fontWeight: FontWeight.w400, color: Colors.black),
       dataTextStyle: context.theme.textTheme.bodyMedium!.copyWith(
           fontWeight: FontWeight.w400, color: AppColors.kSubHeadingsTextColor),
-      columnSpacing: 48.w,
+      columnSpacing: 50.w,
       columns: const [
         DataColumn(label: Text('الكمية/القطعة')),
         DataColumn(label: Text('السعر')),
         DataColumn(label: Text('الخصم المستحق')),
       ],
       rows: [
-        const DataRow(cells: [
-          DataCell(Center(child: Text('1-10'))),
-          DataCell(Center(child: Text('10 ر.س'))),
-          DataCell(Center(child: Text('30%'))),
-        ]),
-        const DataRow(cells: [
-          DataCell(Center(child: Text('1-10'))),
-          DataCell(Center(child: Text('10 ر.س'))),
-          DataCell(Center(child: Text('30%'))),
-        ]),
-        const DataRow(cells: [
-          DataCell(Center(child: Text('1-10'))),
-          DataCell(Center(child: Text('10 ر.س'))),
-          DataCell(Center(child: Text('30%'))),
-        ]),
-        DataRow(cells: [
-          DataCell(Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const CustomSvgIcon(iconPath: AppAssets.infinityIcon),
-              3.w.hSpace,
-              const Text('-1'),
-            ],
-          )),
-          const DataCell(Center(child: Text('10 ر.س'))),
-          const DataCell(Center(child: Text('30%'))),
-        ]),
+        buildRow(),
+        buildRow(),
+        buildRow(),
+        buildFinalRow(),
       ],
     );
+  }
+
+  DataRow buildFinalRow() {
+    return DataRow(cells: [
+      DataCell(Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const CustomSvgIcon(iconPath: AppAssets.infinityIcon),
+          3.w.hSpace,
+          const Text('-1'),
+        ],
+      )),
+      DataCell(Center(
+          child: Container(
+              constraints: BoxConstraints(
+                maxWidth: 50.w,
+              ),
+              child: const Text(
+                '10 ر.س',
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              )))),
+      const DataCell(Center(child: Text('30%'))),
+    ]);
+  }
+
+  DataRow buildRow() {
+    return const DataRow(cells: [
+      DataCell(Center(child: Text('1-10'))),
+      DataCell(Center(
+          child: Text(
+        '10 ر.س',
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+      ))),
+      DataCell(Center(child: Text('30%'))),
+    ]);
   }
 }

@@ -38,7 +38,7 @@ class ProductWholeSalePricesSection extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 215.h,
+            height: 245.h,
             child: const ProductWholeSaleTable(),
           ),
           25.h.vSpace

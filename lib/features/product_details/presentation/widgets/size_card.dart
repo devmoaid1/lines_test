@@ -23,7 +23,9 @@ class SizeCard extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         margin: EdgeInsets.only(left: 30.w),
-        padding: EdgeInsets.symmetric(horizontal: 13.w, vertical: 11.h),
+        padding: EdgeInsets.symmetric(
+          horizontal: 9.w,
+        ),
         decoration: BoxDecoration(
             borderRadius: Layouts.kDefaultBorderRadius,
             border: Border.all(
